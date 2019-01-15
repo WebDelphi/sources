@@ -18,6 +18,12 @@
         <Projects Include="Syntax\Demo\SyntaxHighlight.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="TagCloud\TagCloud.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Excel Control Bar\Project1.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -71,14 +77,32 @@
     <Target Name="SyntaxHighlight:Make">
         <MSBuild Projects="Syntax\Demo\SyntaxHighlight.dproj" Targets="Make"/>
     </Target>
+    <Target Name="TagCloud">
+        <MSBuild Projects="TagCloud\TagCloud.dproj"/>
+    </Target>
+    <Target Name="TagCloud:Clean">
+        <MSBuild Projects="TagCloud\TagCloud.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TagCloud:Make">
+        <MSBuild Projects="TagCloud\TagCloud.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Project1">
+        <MSBuild Projects="Excel Control Bar\Project1.dproj"/>
+    </Target>
+    <Target Name="Project1:Clean">
+        <MSBuild Projects="Excel Control Bar\Project1.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Project1:Make">
+        <MSBuild Projects="Excel Control Bar\Project1.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="LASkinEditor;NativeXML_Demo;Hook;Hook_Demo;SyntaxHighlight"/>
+        <CallTarget Targets="LASkinEditor;NativeXML_Demo;Hook;Hook_Demo;SyntaxHighlight;TagCloud;Project1"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="LASkinEditor:Clean;NativeXML_Demo:Clean;Hook:Clean;Hook_Demo:Clean;SyntaxHighlight:Clean"/>
+        <CallTarget Targets="LASkinEditor:Clean;NativeXML_Demo:Clean;Hook:Clean;Hook_Demo:Clean;SyntaxHighlight:Clean;TagCloud:Clean;Project1:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="LASkinEditor:Make;NativeXML_Demo:Make;Hook:Make;Hook_Demo:Make;SyntaxHighlight:Make"/>
+        <CallTarget Targets="LASkinEditor:Make;NativeXML_Demo:Make;Hook:Make;Hook_Demo:Make;SyntaxHighlight:Make;TagCloud:Make;Project1:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
