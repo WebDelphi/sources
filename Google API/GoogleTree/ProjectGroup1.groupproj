@@ -1,0 +1,48 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{9B638DC0-0024-4B50-AB14-2A375DAFA9E0}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="GTree.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="Package\GoogleVirtualTree.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="GTree">
+			<MSBuild Projects="GTree.dproj"/>
+		</Target>
+		<Target Name="GTree:Clean">
+			<MSBuild Projects="GTree.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="GTree:Make">
+			<MSBuild Projects="GTree.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="GoogleVirtualTree">
+			<MSBuild Projects="Package\GoogleVirtualTree.dproj"/>
+		</Target>
+		<Target Name="GoogleVirtualTree:Clean">
+			<MSBuild Projects="Package\GoogleVirtualTree.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="GoogleVirtualTree:Make">
+			<MSBuild Projects="Package\GoogleVirtualTree.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="GTree;GoogleVirtualTree"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="GTree:Clean;GoogleVirtualTree:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="GTree:Make;GoogleVirtualTree:Make"/>
+		</Target>
+		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')" Project="$(BDS)\Bin\CodeGear.Group.Targets"/>
+	</Project>
