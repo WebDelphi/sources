@@ -24,6 +24,9 @@
         <Projects Include="Excel Control Bar\Project1.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="Excel Properties\ExcelProps.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -95,14 +98,23 @@
     <Target Name="Project1:Make">
         <MSBuild Projects="Excel Control Bar\Project1.dproj" Targets="Make"/>
     </Target>
+    <Target Name="ExcelProps">
+        <MSBuild Projects="Excel Properties\ExcelProps.dproj"/>
+    </Target>
+    <Target Name="ExcelProps:Clean">
+        <MSBuild Projects="Excel Properties\ExcelProps.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ExcelProps:Make">
+        <MSBuild Projects="Excel Properties\ExcelProps.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="LASkinEditor;NativeXML_Demo;Hook;Hook_Demo;SyntaxHighlight;TagCloud;Project1"/>
+        <CallTarget Targets="LASkinEditor;NativeXML_Demo;Hook;Hook_Demo;SyntaxHighlight;TagCloud;Project1;ExcelProps"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="LASkinEditor:Clean;NativeXML_Demo:Clean;Hook:Clean;Hook_Demo:Clean;SyntaxHighlight:Clean;TagCloud:Clean;Project1:Clean"/>
+        <CallTarget Targets="LASkinEditor:Clean;NativeXML_Demo:Clean;Hook:Clean;Hook_Demo:Clean;SyntaxHighlight:Clean;TagCloud:Clean;Project1:Clean;ExcelProps:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="LASkinEditor:Make;NativeXML_Demo:Make;Hook:Make;Hook_Demo:Make;SyntaxHighlight:Make;TagCloud:Make;Project1:Make"/>
+        <CallTarget Targets="LASkinEditor:Make;NativeXML_Demo:Make;Hook:Make;Hook_Demo:Make;SyntaxHighlight:Make;TagCloud:Make;Project1:Make;ExcelProps:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
