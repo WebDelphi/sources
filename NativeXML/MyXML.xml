@@ -1,0 +1,3 @@
+п»ї<?xml version="1.0" encoding="UTF-8"?>
+<!--Комментарий к файлу-->
+<RootNode><FirstNode attr_integer="12" attr_date="2019-01-15T21:18:54.960Z">Значение узла</FirstNode><SecondNode>false</SecondNode><WithCdata><![CDATA[Это строка в CDATA]]></WithCdata></RootNode>
