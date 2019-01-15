@@ -22,9 +22,5 @@ object Form5: TForm5
     Align = alClient
     Indent = 19
     TabOrder = 0
-    ExplicitLeft = 116
-    ExplicitTop = 56
-    ExplicitWidth = 121
-    ExplicitHeight = 97
   end
 end

@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, ExtCtrls, ComCtrls, StdCtrls,XMLTree, sTreeView;
+  Dialogs, ExtCtrls, ComCtrls, StdCtrls,XMLTree;
 
 type
   TForm5 = class(TForm)
