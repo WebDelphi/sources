@@ -1,0 +1,22 @@
+﻿{"kind":"tasks#tasks",
+ "etag":"ptcy4Awv48HyN47i0A",
+ "items":[
+          {"kind":"tasks#task",
+           "id":"MTc4Njk1MjA4MTEyODY5OTA4",
+           "title":"Задача №1",
+           "updated":"2011-10-15T10:07:16.000Z",
+           "selfLink":"https://www.googleapis.com/tasks/v1/lists/MTcw/tasks/MyMTEyODY5OTA4",
+           "position":"00000000000000131071",
+           "status":"needsAction",
+           "due":"2011-10-14T00:00:00.000Z"},
+
+           {"kind":"tasks#task",
+            "id":"MTc4Njk1MjA4NTYyMTMzMDA",
+            "title":"Задача №2",
+            "updated":"2011-10-15T09:41:50.000Z",
+            "selfLink":"https://www.googleapis.com/tasks/v1/lists/MTcw/tasks/MTc4Njk1MjA4MTMzMDA",
+            "position":"00000000000000196607",
+            "status":"completed",
+            "completed":"2011-10-15T09:41:50.000Z"}
+         ]
+}
