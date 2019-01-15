@@ -1,14 +1,14 @@
-unit XMLTree;
+п»їunit XMLTree;
 
 interface
 
-uses xmldoc, XMLIntf, ComCtrls,Classes, SysUtils,Dialogs,LAseConst;
+uses xmldoc, XMLIntf, ComCtrls, Classes, SysUtils, Dialogs, LAseConst;
 
 type
   TNodeRecord = record
-    XMLNode:  IXMLNode;
+    XMLNode: IXMLNode;
     TrNode: TTreeNode;
-end;
+  end;
 
 type
   PTreeView = ^TTreeView;
@@ -29,18 +29,18 @@ type
 type
   TXMLTree = class
   private
-    FTreeView: PTreeView;//указатель на дерево
-    FXMLDoc: IXMLDocument;//XML-документ
+    FTreeView: PTreeView; // СѓРєР°Р·Р°С‚РµР»СЊ РЅР° РґРµСЂРµРІРѕ
+    FXMLDoc: IXMLDocument; // XML-РґРѕРєСѓРјРµРЅС‚
     FFileName: string;
     FNodeList: TNodeList;
     procedure LoadTopElements;
     procedure Recurse;
   public
-    function XMLNodeFromTreeText(const cText: string):IXMLNode;
+    function XMLNodeFromTreeText(const cText: string): IXMLNode;
     procedure SaveTreeToXML;
     property NodeList: TNodeList read FNodeList;
-    constructor Create(const aFileName:string; aTree:PTreeView);
-end;
+    constructor Create(const aFileName: string; aTree: PTreeView);
+  end;
 
 implementation
 
@@ -48,32 +48,35 @@ implementation
 
 constructor TXMLTree.Create(const aFileName: string; aTree: PTreeView);
 begin
-  if aTree=nil then Exit;
+  if aTree = nil then
+    Exit;
   inherited Create;
-  FNodeList:=TNodeList.Create;
-  FFileName:=aFileName;
-  FTreeView:=aTree;
-  if Length(Trim(FFileName))>0 then
-     begin
-       FXMLDoc:=NewXMLDocument();
-       FXMLDoc.LoadFromFile(FFileName);
-       FXMLDoc.Active:=true;
-       Recurse;
-       FTreeView.SortType:=stText;
-     end;
+  FNodeList := TNodeList.Create;
+  FFileName := aFileName;
+  FTreeView := aTree;
+  if Length(Trim(FFileName)) > 0 then
+  begin
+    FXMLDoc := NewXMLDocument();
+    FXMLDoc.LoadFromFile(FFileName);
+    FXMLDoc.Active := true;
+    Recurse;
+    FTreeView.SortType := stText;
+  end;
 end;
 
 procedure TXMLTree.LoadTopElements;
-var i:integer;
-Root: IXMLNode;
+var
+  i: Integer;
+  Root: IXMLNode;
 begin
-  Root:=FXMLDoc.DocumentElement;
-  for i:=0 to Root.ChildNodes.Count-1 do
-    begin
-      ShowMessage(Root.ChildNodes[i].NodeName);
-      FTreeView.Items.AddObject(FTreeView.TopItem,Root.ChildNodes[i].NodeName,pointer(i));
-      FTreeView.TopItem.HasChildren:=Root.ChildNodes[i].HasChildNodes;
-    end;
+  Root := FXMLDoc.DocumentElement;
+  for i := 0 to Root.ChildNodes.Count - 1 do
+  begin
+    ShowMessage(Root.ChildNodes[i].NodeName);
+    FTreeView.Items.AddObject(FTreeView.TopItem, Root.ChildNodes[i].NodeName,
+      pointer(i));
+    FTreeView.TopItem.HasChildren := Root.ChildNodes[i].HasChildNodes;
+  end;
 end;
 
 procedure TXMLTree.Recurse;
@@ -86,22 +89,23 @@ var
     s: string;
     NodeRec: PNodeRecord;
   begin
-    if Node = nil then Exit;
-    if (Node.NodeName='Button')or(Node.NodeName='CheckedButton') then
-      s:=Node.Attributes['BtnName']
+    if Node = nil then
+      Exit;
+    if (Node.NodeName = 'Button') or (Node.NodeName = 'CheckedButton') then
+      s := Node.Attributes['BtnName']
     else
-      s:=Node.NodeName;
-    if s<>'#comment' then
+      s := Node.NodeName;
+    if s <> '#comment' then
+    begin
+      TreeNode := FTreeView.Items.AddChild(TreeNode, SysBtnNameToHuman(s));
+      New(NodeRec);
+      with NodeRec^ do
       begin
-    TreeNode := FTreeView.Items.AddChild(TreeNode, SysBtnNameToHuman(s));
-    New(NodeRec);
-    with NodeRec^ do
-     begin
-       XMLNode:=Node;
-       TrNode:=TreeNode;
-     end;
-    FNodeList.Add(NodeRec);
+        XMLNode := Node;
+        TrNode := TreeNode;
       end;
+      FNodeList.Add(NodeRec);
+    end;
     cNode := Node.ChildNodes.First;
     while cNode <> nil do
     begin
@@ -111,35 +115,35 @@ var
   end;
 
 begin
-  iNode := FXMLDoc.DocumentElement.ChildNodes.First;//стартуем с первого элемента
+  iNode := FXMLDoc.DocumentElement.ChildNodes.First;
+  // СЃС‚Р°СЂС‚СѓРµРј СЃ РїРµСЂРІРѕРіРѕ СЌР»РµРјРµРЅС‚Р°
   while iNode <> nil do
   begin
-    ProcessNode(iNode, nil); // Рекурсия
-    iNode:=iNode.NextSibling;
+    ProcessNode(iNode, nil); // Р РµРєСѓСЂСЃРёСЏ
+    iNode := iNode.NextSibling;
   end;
 end;
 
-
-
 procedure TXMLTree.SaveTreeToXML;
 var
-  tn : TTreeNode;
-  XMLDoc : TXMLDocument;
-  iNode : IXMLNode;
+  tn: TTreeNode;
+  xmldoc: TXMLDocument;
+  iNode: IXMLNode;
 
   procedure ProcessTreeItem(tn: TTreeNode; iNode: IXMLNode);
   var
-    cNode : IXMLNode;
-    sNode : IXMLNode;
+    cNode: IXMLNode;
+    sNode: IXMLNode;
   begin
-    if (tn = nil) then Exit;
-    sNode:= XMLNodeFromTreeText(tn.Text);
-    cNode:= iNode.AddChild(sNode.NodeName);//имя узла
-    {атрибуы узла}
+    if (tn = nil) then
+      Exit;
+    sNode := XMLNodeFromTreeText(tn.Text);
+    cNode := iNode.AddChild(sNode.NodeName); // РёРјСЏ СѓР·Р»Р°
+    { Р°С‚СЂРёР±СѓС‹ СѓР·Р»Р° }
     cNode.Attributes['Text'] := tn.Text;
     cNode.Attributes['Level'] := IntToStr(tn.Level);
 
-    //дочерние узлы
+    // РґРѕС‡РµСЂРЅРёРµ СѓР·Р»С‹
     tn := tn.getFirstChild;
     while tn <> nil do
     begin
@@ -149,40 +153,41 @@ var
   end;
 
 begin
-  XMLDoc := TXMLDocument.Create(nil);
-  XMLDoc.Active := True;
-  iNode := XMLDoc.AddChild('Skin');//создаем корневой элемент
-  //атрибуты корневого узла
-  iNode.Attributes['name']:='MySkin';
-  iNode.Attributes['author']:='vlad';
+  xmldoc := TXMLDocument.Create(nil);
+  xmldoc.Active := true;
+  iNode := xmldoc.AddChild('Skin'); // СЃРѕР·РґР°РµРј РєРѕСЂРЅРµРІРѕР№ СЌР»РµРјРµРЅС‚
+  // Р°С‚СЂРёР±СѓС‚С‹ РєРѕСЂРЅРµРІРѕРіРѕ СѓР·Р»Р°
+  iNode.Attributes['name'] := 'MySkin';
+  iNode.Attributes['author'] := 'vlad';
 
   tn := FTreeView^.TopItem;
   while tn <> nil do
   begin
-    ProcessTreeItem (tn, iNode);
+    ProcessTreeItem(tn, iNode);
     tn := tn.getNextSibling;
   end;
-  //сохраняем файл
-  XMLDoc.SaveToFile(ChangeFileExt(ParamStr(0),'.XML'));
-  //уничтожаем объект
-  XMLDoc := nil
+  // СЃРѕС…СЂР°РЅСЏРµРј С„Р°Р№Р»
+  xmldoc.SaveToFile(ChangeFileExt(ParamStr(0), '.XML'));
+  // СѓРЅРёС‡С‚РѕР¶Р°РµРј РѕР±СЉРµРєС‚
+  xmldoc := nil
 end;
 
 function TXMLTree.XMLNodeFromTreeText(const cText: string): IXMLNode;
-var LCount: Integer;
-    LList: PPointerList;
-    i:integer;
+var
+  LCount: Integer;
+  LList: PPointerList;
+  i: Integer;
 begin
-LCount:= FNodeList.Count;
-LList :=FNodeList.List;
+  LCount := FNodeList.Count;
+  LList := Pointer(FNodeList.List);
   for i := 0 to LCount - 1 do
+  begin
+    if PNodeRecord(LList)^.TrNode.Text = cText then
     begin
-      if PNodeRecord(LList[i])^.TrNode.Text=cText then
-        begin
-          Result:=PNodeRecord(LList[i])^.XMLNode;
-          break;
-        end;
+      Result := PNodeRecord(LList)^.XMLNode;
+      break;
     end;
+  end;
 end;
 
 { TNodeList }
@@ -201,12 +206,10 @@ begin
   inherited Clear;
 end;
 
-
 constructor TNodeList.Create;
 begin
   inherited Create;
 end;
-
 
 destructor TNodeList.Destroy;
 begin
@@ -216,7 +219,7 @@ end;
 
 function TNodeList.GetRecord(index: Integer): PNodeRecord;
 begin
-  Result:= PNodeRecord(Items[index]);
+  Result := PNodeRecord(Items[index]);
 
 end;
 
@@ -231,7 +234,6 @@ begin
       Dispose(p);
     Items[index] := Ptr;
   end;
-
 
 end;
 

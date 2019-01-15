@@ -1,4 +1,4 @@
-unit Skins;
+п»їunit Skins;
 
 interface
 
@@ -55,7 +55,7 @@ inherited Create;
     FDisabledRect:=GetRect('DisabledRect');
     FPosRect:=GetRect('PosRect');
   except
-    ShowMessage('Ошибка создания кнопки');
+    ShowMessage('РћС€РёР±РєР° СЃРѕР·РґР°РЅРёСЏ РєРЅРѕРїРєРё');
     Destroy;
   end;
 end;
