@@ -39,6 +39,9 @@
         <Projects Include="Synapse\Partial Download\partdownload.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="Synapse\Proxy\synaproxy.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -155,14 +158,23 @@
     <Target Name="partdownload:Make">
         <MSBuild Projects="Synapse\Partial Download\partdownload.dproj" Targets="Make"/>
     </Target>
+    <Target Name="synaproxy">
+        <MSBuild Projects="Synapse\Proxy\synaproxy.dproj"/>
+    </Target>
+    <Target Name="synaproxy:Clean">
+        <MSBuild Projects="Synapse\Proxy\synaproxy.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="synaproxy:Make">
+        <MSBuild Projects="Synapse\Proxy\synaproxy.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="LASkinEditor;NativeXML_Demo;Hook;Hook_Demo;SyntaxHighlight;TagCloud;Project1;ExcelProps;metatags;charsetfinder_10;synaprogress;partdownload"/>
+        <CallTarget Targets="LASkinEditor;NativeXML_Demo;Hook;Hook_Demo;SyntaxHighlight;TagCloud;Project1;ExcelProps;metatags;charsetfinder_10;synaprogress;partdownload;synaproxy"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="LASkinEditor:Clean;NativeXML_Demo:Clean;Hook:Clean;Hook_Demo:Clean;SyntaxHighlight:Clean;TagCloud:Clean;Project1:Clean;ExcelProps:Clean;metatags:Clean;charsetfinder_10:Clean;synaprogress:Clean;partdownload:Clean"/>
+        <CallTarget Targets="LASkinEditor:Clean;NativeXML_Demo:Clean;Hook:Clean;Hook_Demo:Clean;SyntaxHighlight:Clean;TagCloud:Clean;Project1:Clean;ExcelProps:Clean;metatags:Clean;charsetfinder_10:Clean;synaprogress:Clean;partdownload:Clean;synaproxy:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="LASkinEditor:Make;NativeXML_Demo:Make;Hook:Make;Hook_Demo:Make;SyntaxHighlight:Make;TagCloud:Make;Project1:Make;ExcelProps:Make;metatags:Make;charsetfinder_10:Make;synaprogress:Make;partdownload:Make"/>
+        <CallTarget Targets="LASkinEditor:Make;NativeXML_Demo:Make;Hook:Make;Hook_Demo:Make;SyntaxHighlight:Make;TagCloud:Make;Project1:Make;ExcelProps:Make;metatags:Make;charsetfinder_10:Make;synaprogress:Make;partdownload:Make;synaproxy:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
