@@ -174,13 +174,11 @@ end;
 
 function TXMLTree.XMLNodeFromTreeText(const cText: string): IXMLNode;
 var
-  LCount: Integer;
   LList: PPointerList;
   i: Integer;
 begin
-  LCount := FNodeList.Count;
   LList := Pointer(FNodeList.List);
-  for i := 0 to LCount - 1 do
+  for i := 0 to Pred(FNodeList.Count) do
   begin
     if PNodeRecord(LList)^.TrNode.Text = cText then
     begin
