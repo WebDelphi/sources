@@ -33,13 +33,19 @@
         <Projects Include="Charset Finder\charsetfinder_10.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="Synapse\SynaPB\synaprogress.dproj">
+        <Projects Include="Synapse\SynaPB\synaprogress_1.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="Synapse\Partial Download\partdownload.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="Synapse\Proxy\synaproxy.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Synapse\SynaTime\synaprogress.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Synapse\SynaMultipart\syna_multipart.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -140,14 +146,14 @@
     <Target Name="charsetfinder_10:Make">
         <MSBuild Projects="Charset Finder\charsetfinder_10.dproj" Targets="Make"/>
     </Target>
-    <Target Name="synaprogress">
-        <MSBuild Projects="Synapse\SynaPB\synaprogress.dproj"/>
+    <Target Name="synaprogress_1">
+        <MSBuild Projects="Synapse\SynaPB\synaprogress_1.dproj"/>
     </Target>
-    <Target Name="synaprogress:Clean">
-        <MSBuild Projects="Synapse\SynaPB\synaprogress.dproj" Targets="Clean"/>
+    <Target Name="synaprogress_1:Clean">
+        <MSBuild Projects="Synapse\SynaPB\synaprogress_1.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="synaprogress:Make">
-        <MSBuild Projects="Synapse\SynaPB\synaprogress.dproj" Targets="Make"/>
+    <Target Name="synaprogress_1:Make">
+        <MSBuild Projects="Synapse\SynaPB\synaprogress_1.dproj" Targets="Make"/>
     </Target>
     <Target Name="partdownload">
         <MSBuild Projects="Synapse\Partial Download\partdownload.dproj"/>
@@ -167,14 +173,32 @@
     <Target Name="synaproxy:Make">
         <MSBuild Projects="Synapse\Proxy\synaproxy.dproj" Targets="Make"/>
     </Target>
+    <Target Name="synaprogress">
+        <MSBuild Projects="Synapse\SynaTime\synaprogress.dproj"/>
+    </Target>
+    <Target Name="synaprogress:Clean">
+        <MSBuild Projects="Synapse\SynaTime\synaprogress.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="synaprogress:Make">
+        <MSBuild Projects="Synapse\SynaTime\synaprogress.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="syna_multipart">
+        <MSBuild Projects="Synapse\SynaMultipart\syna_multipart.dproj"/>
+    </Target>
+    <Target Name="syna_multipart:Clean">
+        <MSBuild Projects="Synapse\SynaMultipart\syna_multipart.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="syna_multipart:Make">
+        <MSBuild Projects="Synapse\SynaMultipart\syna_multipart.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="LASkinEditor;NativeXML_Demo;Hook;Hook_Demo;SyntaxHighlight;TagCloud;Project1;ExcelProps;metatags;charsetfinder_10;synaprogress;partdownload;synaproxy"/>
+        <CallTarget Targets="LASkinEditor;NativeXML_Demo;Hook;Hook_Demo;SyntaxHighlight;TagCloud;Project1;ExcelProps;metatags;charsetfinder_10;synaprogress_1;partdownload;synaproxy;synaprogress;syna_multipart"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="LASkinEditor:Clean;NativeXML_Demo:Clean;Hook:Clean;Hook_Demo:Clean;SyntaxHighlight:Clean;TagCloud:Clean;Project1:Clean;ExcelProps:Clean;metatags:Clean;charsetfinder_10:Clean;synaprogress:Clean;partdownload:Clean;synaproxy:Clean"/>
+        <CallTarget Targets="LASkinEditor:Clean;NativeXML_Demo:Clean;Hook:Clean;Hook_Demo:Clean;SyntaxHighlight:Clean;TagCloud:Clean;Project1:Clean;ExcelProps:Clean;metatags:Clean;charsetfinder_10:Clean;synaprogress_1:Clean;partdownload:Clean;synaproxy:Clean;synaprogress:Clean;syna_multipart:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="LASkinEditor:Make;NativeXML_Demo:Make;Hook:Make;Hook_Demo:Make;SyntaxHighlight:Make;TagCloud:Make;Project1:Make;ExcelProps:Make;metatags:Make;charsetfinder_10:Make;synaprogress:Make;partdownload:Make;synaproxy:Make"/>
+        <CallTarget Targets="LASkinEditor:Make;NativeXML_Demo:Make;Hook:Make;Hook_Demo:Make;SyntaxHighlight:Make;TagCloud:Make;Project1:Make;ExcelProps:Make;metatags:Make;charsetfinder_10:Make;synaprogress_1:Make;partdownload:Make;synaproxy:Make;synaprogress:Make;syna_multipart:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
