@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, httpsend, ssl_openssl, superobject, AdvSmoothGauge;
+  Dialogs, StdCtrls, httpsend, ssl_openssl, superobject;
 
 const
   cURL = 'https://www.googleapis.com/pagespeedonline/v1/runPagespeed?url=%s&key=%s&callback=response';
