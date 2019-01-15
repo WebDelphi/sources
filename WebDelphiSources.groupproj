@@ -15,6 +15,9 @@
         <Projects Include="Hook\Hook_Demo.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="Syntax\Demo\SyntaxHighlight.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -59,14 +62,23 @@
     <Target Name="Hook_Demo:Make">
         <MSBuild Projects="Hook\Hook_Demo.dproj" Targets="Make"/>
     </Target>
+    <Target Name="SyntaxHighlight">
+        <MSBuild Projects="Syntax\Demo\SyntaxHighlight.dproj"/>
+    </Target>
+    <Target Name="SyntaxHighlight:Clean">
+        <MSBuild Projects="Syntax\Demo\SyntaxHighlight.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SyntaxHighlight:Make">
+        <MSBuild Projects="Syntax\Demo\SyntaxHighlight.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="LASkinEditor;NativeXML_Demo;Hook;Hook_Demo"/>
+        <CallTarget Targets="LASkinEditor;NativeXML_Demo;Hook;Hook_Demo;SyntaxHighlight"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="LASkinEditor:Clean;NativeXML_Demo:Clean;Hook:Clean;Hook_Demo:Clean"/>
+        <CallTarget Targets="LASkinEditor:Clean;NativeXML_Demo:Clean;Hook:Clean;Hook_Demo:Clean;SyntaxHighlight:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="LASkinEditor:Make;NativeXML_Demo:Make;Hook:Make;Hook_Demo:Make"/>
+        <CallTarget Targets="LASkinEditor:Make;NativeXML_Demo:Make;Hook:Make;Hook_Demo:Make;SyntaxHighlight:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
