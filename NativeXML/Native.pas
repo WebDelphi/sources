@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, NativeXML, httpsend {httpsend - для Synapse};
+  Dialogs, StdCtrls, NativeXML, httpsend;
 
 type
   TForm3 = class(TForm)
