@@ -1,0 +1,124 @@
+object Form13: TForm13
+  Left = 0
+  Top = 0
+  BiDiMode = bdLeftToRight
+  Caption = 'Form13'
+  ClientHeight = 400
+  ClientWidth = 634
+  Transparency = False
+  Visible = False
+  OnCreate = FormCreate
+  StyleLookup = 'backgroundstyle'
+  object StringGrid1: TStringGrid
+    Align = alBottom
+    Position.Point = '(0,172)'
+    Width = 634.000000000000000000
+    Height = 228.000000000000000000
+    StyleLookup = 'gridstyle'
+    TabOrder = 0
+    RowHeight = 21.000000000000000000
+    RowCount = 0
+    object StringColumn1: TStringColumn
+      Width = 100.000000000000000000
+      Height = 205.000000000000000000
+      HitTest = False
+      TabOrder = 0
+      Header = #1061#1080#1076#1077#1088
+    end
+    object StringColumn2: TStringColumn
+      Position.Point = '(100,0)'
+      Width = 143.000000000000000000
+      Height = 205.000000000000000000
+      HitTest = False
+      TabOrder = 1
+    end
+    object StringColumn4: TStringColumn
+      Position.Point = '(243,0)'
+      Width = 134.000000000000000000
+      Height = 205.000000000000000000
+      HitTest = False
+      TabOrder = 2
+    end
+    object StringColumn5: TStringColumn
+      Position.Point = '(377,0)'
+      Width = 100.000000000000000000
+      Height = 205.000000000000000000
+      HitTest = False
+      TabOrder = 3
+    end
+  end
+  object Splitter1: TSplitter
+    Align = alBottom
+    Cursor = crVSplit
+    Position.Point = '(0,167)'
+    Width = 634.000000000000000000
+    Height = 5.000000000000000000
+    TabOrder = 1
+    MinSize = 20.000000000000000000
+  end
+  object Panel1: TPanel
+    Align = alBottom
+    Position.Point = '(0,130)'
+    Width = 634.000000000000000000
+    Height = 37.000000000000000000
+    TabOrder = 2
+    object Button1: TButton
+      Position.Point = '(10,8)'
+      Width = 80.000000000000000000
+      Height = 22.000000000000000000
+      OnClick = Button1Click
+      TabOrder = 0
+      StaysPressed = False
+      IsPressed = False
+      Text = 'Connect'
+    end
+    object Button2: TButton
+      Position.Point = '(94,8)'
+      Width = 135.000000000000000000
+      Height = 22.000000000000000000
+      OnClick = Button2Click
+      TabOrder = 1
+      StaysPressed = False
+      IsPressed = False
+      Text = #1042#1099#1087#1086#1083#1085#1080#1090#1100' SQL'
+    end
+    object ComboBox1: TComboBox
+      Position.Point = '(296,6)'
+      Width = 131.000000000000000000
+      Height = 22.000000000000000000
+      TabOrder = 2
+      ItemIndex = -1
+      OnChange = ComboBox1Change
+    end
+    object Label2: TLabel
+      Position.Point = '(246,10)'
+      Width = 57.000000000000000000
+      Height = 15.000000000000000000
+      TabOrder = 3
+      Text = #1058#1072#1073#1083#1080#1094#1099
+    end
+  end
+  object Label1: TLabel
+    Align = alTop
+    Width = 634.000000000000000000
+    Height = 15.000000000000000000
+    TabOrder = 3
+    Text = 'SQL-'#1079#1072#1087#1088#1086#1089
+  end
+  object Memo1: TMemo
+    Align = alClient
+    Position.Point = '(0,15)'
+    Width = 634.000000000000000000
+    Height = 115.000000000000000000
+    TabOrder = 4
+    WordWrap = False
+  end
+  object dlgOpenBase: TOpenDialog
+    Left = 574
+    Top = 28
+  end
+  object StyleBook1: TStyleBook
+    Left = 150
+    Top = 55
+  end
+end
