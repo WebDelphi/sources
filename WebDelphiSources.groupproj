@@ -72,6 +72,9 @@
         <Projects Include="LiveBindings\Project12.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="Excel Read and Write\excel_speed.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -287,14 +290,23 @@
     <Target Name="Project12:Make">
         <MSBuild Projects="LiveBindings\Project12.dproj" Targets="Make"/>
     </Target>
+    <Target Name="excel_speed">
+        <MSBuild Projects="Excel Read and Write\excel_speed.dproj"/>
+    </Target>
+    <Target Name="excel_speed:Clean">
+        <MSBuild Projects="Excel Read and Write\excel_speed.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="excel_speed:Make">
+        <MSBuild Projects="Excel Read and Write\excel_speed.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="LASkinEditor;NativeXML_Demo;Hook;Hook_Demo;SyntaxHighlight;TagCloud;Project1;ExcelProps;metatags;charsetfinder_10;synaprogress_1;partdownload;synaproxy;synaprogress;syna_multipart;excel_comments;PS;sitemaploader_10;GoogleIndexer_10;YandexSpeller_10;FMXSQlite;DelphiJSON;Project12"/>
+        <CallTarget Targets="LASkinEditor;NativeXML_Demo;Hook;Hook_Demo;SyntaxHighlight;TagCloud;Project1;ExcelProps;metatags;charsetfinder_10;synaprogress_1;partdownload;synaproxy;synaprogress;syna_multipart;excel_comments;PS;sitemaploader_10;GoogleIndexer_10;YandexSpeller_10;FMXSQlite;DelphiJSON;Project12;excel_speed"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="LASkinEditor:Clean;NativeXML_Demo:Clean;Hook:Clean;Hook_Demo:Clean;SyntaxHighlight:Clean;TagCloud:Clean;Project1:Clean;ExcelProps:Clean;metatags:Clean;charsetfinder_10:Clean;synaprogress_1:Clean;partdownload:Clean;synaproxy:Clean;synaprogress:Clean;syna_multipart:Clean;excel_comments:Clean;PS:Clean;sitemaploader_10:Clean;GoogleIndexer_10:Clean;YandexSpeller_10:Clean;FMXSQlite:Clean;DelphiJSON:Clean;Project12:Clean"/>
+        <CallTarget Targets="LASkinEditor:Clean;NativeXML_Demo:Clean;Hook:Clean;Hook_Demo:Clean;SyntaxHighlight:Clean;TagCloud:Clean;Project1:Clean;ExcelProps:Clean;metatags:Clean;charsetfinder_10:Clean;synaprogress_1:Clean;partdownload:Clean;synaproxy:Clean;synaprogress:Clean;syna_multipart:Clean;excel_comments:Clean;PS:Clean;sitemaploader_10:Clean;GoogleIndexer_10:Clean;YandexSpeller_10:Clean;FMXSQlite:Clean;DelphiJSON:Clean;Project12:Clean;excel_speed:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="LASkinEditor:Make;NativeXML_Demo:Make;Hook:Make;Hook_Demo:Make;SyntaxHighlight:Make;TagCloud:Make;Project1:Make;ExcelProps:Make;metatags:Make;charsetfinder_10:Make;synaprogress_1:Make;partdownload:Make;synaproxy:Make;synaprogress:Make;syna_multipart:Make;excel_comments:Make;PS:Make;sitemaploader_10:Make;GoogleIndexer_10:Make;YandexSpeller_10:Make;FMXSQlite:Make;DelphiJSON:Make;Project12:Make"/>
+        <CallTarget Targets="LASkinEditor:Make;NativeXML_Demo:Make;Hook:Make;Hook_Demo:Make;SyntaxHighlight:Make;TagCloud:Make;Project1:Make;ExcelProps:Make;metatags:Make;charsetfinder_10:Make;synaprogress_1:Make;partdownload:Make;synaproxy:Make;synaprogress:Make;syna_multipart:Make;excel_comments:Make;PS:Make;sitemaploader_10:Make;GoogleIndexer_10:Make;YandexSpeller_10:Make;FMXSQlite:Make;DelphiJSON:Make;Project12:Make;excel_speed:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
