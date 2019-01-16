@@ -1,0 +1,349 @@
+object Form1: TForm1
+  Left = 178
+  Height = 504
+  Top = 181
+  Width = 711
+  ActiveControl = Panel2
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'Пинговалка'
+  ClientHeight = 479
+  ClientWidth = 711
+  Menu = MainMenu1
+  OnClose = FormClose
+  OnShow = FormShow
+  LCLVersion = '0.9.28.2'
+  object Panel1: TPanel
+    Left = 287
+    Height = 479
+    Top = 0
+    Width = 424
+    Align = alClient
+    ClientHeight = 479
+    ClientWidth = 424
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 10
+      Height = 18
+      Top = 56
+      Width = 112
+      Caption = 'Название блога'
+      ParentColor = False
+    end
+    object Label2: TLabel
+      Left = 10
+      Height = 18
+      Top = 88
+      Width = 86
+      Caption = 'Адрес блога'
+      ParentColor = False
+    end
+    object Label3: TLabel
+      Left = 10
+      Height = 18
+      Top = 120
+      Width = 256
+      Caption = 'URL страницы, которая изменилась:'
+      ParentColor = False
+    end
+    object Label4: TLabel
+      Left = 10
+      Height = 18
+      Top = 176
+      Width = 121
+      Caption = 'RSS-канал блога:'
+      ParentColor = False
+    end
+    object Label5: TLabel
+      Left = 10
+      Height = 18
+      Top = 232
+      Width = 156
+      Caption = 'Тэги (через запятую): '
+      ParentColor = False
+    end
+    object Label6: TLabel
+      Left = 10
+      Height = 18
+      Top = 329
+      Width = 111
+      Caption = 'Всего сервисов '
+      ParentColor = False
+    end
+    object Label7: TLabel
+      Left = 10
+      Height = 18
+      Top = 355
+      Width = 140
+      Caption = 'Отправлено пингов'
+      ParentColor = False
+    end
+    object Label8: TLabel
+      Left = 42
+      Height = 18
+      Top = 379
+      Width = 62
+      Caption = 'Успешно'
+      ParentColor = False
+    end
+    object Label9: TLabel
+      Left = 42
+      Height = 18
+      Top = 408
+      Width = 56
+      Caption = 'Ошибок'
+      ParentColor = False
+    end
+    object Label10: TLabel
+      Left = 10
+      Height = 18
+      Top = 435
+      Width = 144
+      Caption = 'Осталось отправить'
+      ParentColor = False
+    end
+    object Label11: TLabel
+      Left = 170
+      Height = 18
+      Top = 329
+      Width = 9
+      Caption = '0'
+      ParentColor = False
+    end
+    object Label12: TLabel
+      Left = 170
+      Height = 18
+      Top = 355
+      Width = 9
+      Caption = '0'
+      ParentColor = False
+    end
+    object Label13: TLabel
+      Left = 170
+      Height = 18
+      Top = 379
+      Width = 9
+      Caption = '0'
+      ParentColor = False
+    end
+    object Label14: TLabel
+      Left = 170
+      Height = 18
+      Top = 407
+      Width = 9
+      Caption = '0'
+      ParentColor = False
+    end
+    object Label15: TLabel
+      Left = 170
+      Height = 18
+      Top = 435
+      Width = 9
+      Caption = '0'
+      ParentColor = False
+    end
+    object Label16: TLabel
+      Left = 10
+      Height = 18
+      Top = 16
+      Width = 73
+      Caption = 'RSS-канал'
+      ParentColor = False
+    end
+    object Edit1: TEdit
+      Left = 130
+      Height = 27
+      Top = 48
+      Width = 288
+      TabOrder = 0
+    end
+    object Edit2: TEdit
+      Left = 130
+      Height = 27
+      Top = 80
+      Width = 288
+      TabOrder = 1
+    end
+    object Edit3: TEdit
+      Left = 10
+      Height = 27
+      Top = 136
+      Width = 408
+      TabOrder = 2
+    end
+    object Edit4: TEdit
+      Left = 10
+      Height = 27
+      Top = 192
+      Width = 408
+      TabOrder = 3
+    end
+    object Edit5: TEdit
+      Left = 10
+      Height = 27
+      Top = 256
+      Width = 408
+      TabOrder = 4
+    end
+    object BitBtn1: TBitBtn
+      Left = 154
+      Height = 30
+      Top = 288
+      Width = 75
+      Caption = 'Пинг!'
+      Default = True
+      Kind = bkOK
+      ModalResult = 1
+      OnClick = BitBtn1Click
+      TabOrder = 5
+    end
+    object ComboBox1: TComboBox
+      Left = 90
+      Height = 29
+      Top = 8
+      Width = 288
+      ItemHeight = 0
+      OnChange = ComboBox1Change
+      TabOrder = 6
+    end
+    object BitBtn2: TBitBtn
+      Left = 378
+      Height = 30
+      Hint = 'Обновить список RSS'
+      Top = 7
+      Width = 40
+      Kind = bkRetry
+      ModalResult = 4
+      OnClick = BitBtn2Click
+      TabOrder = 7
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 479
+    Top = 0
+    Width = 282
+    Align = alLeft
+    ClientHeight = 479
+    ClientWidth = 282
+    TabOrder = 1
+    object Panel3: TPanel
+      Left = 1
+      Height = 86
+      Top = 392
+      Width = 280
+      Align = alBottom
+      ClientHeight = 86
+      ClientWidth = 280
+      TabOrder = 0
+      object Label17: TLabel
+        Left = 7
+        Height = 18
+        Top = 8
+        Width = 130
+        Caption = 'Сервисов в списке'
+        ParentColor = False
+      end
+      object Label18: TLabel
+        Left = 143
+        Height = 18
+        Top = 8
+        Width = 9
+        Caption = '0'
+        ParentColor = False
+      end
+      object BitBtn3: TBitBtn
+        Left = 7
+        Height = 30
+        Top = 32
+        Width = 264
+        Caption = 'Загрузить список'
+        Kind = bkRetry
+        ModalResult = 4
+        OnClick = BitBtn3Click
+        TabOrder = 0
+      end
+      object CheckBox1: TCheckBox
+        Left = 7
+        Height = 22
+        Top = 64
+        Width = 173
+        Caption = 'Выбрать все сервисы'
+        OnChange = CheckBox1Change
+        TabOrder = 1
+      end
+    end
+    object CheckListBox1: TCheckListBox
+      Left = 1
+      Height = 391
+      Top = 1
+      Width = 280
+      Align = alClient
+      ItemHeight = 0
+      TabOrder = 1
+      TopIndex = -1
+    end
+  end
+  object Splitter1: TSplitter
+    Left = 282
+    Height = 479
+    Top = 0
+    Width = 5
+  end
+  object MainMenu1: TMainMenu
+    left = 608
+    top = 408
+    object MenuItem6: TMenuItem
+      Caption = 'Настройка'
+      object MenuItem7: TMenuItem
+        Caption = 'Сайт'
+        OnClick = MenuItem7Click
+      end
+    end
+    object MenuItem1: TMenuItem
+      Caption = 'Список сервисов'
+      object MenuItem2: TMenuItem
+        Caption = 'Очистить'
+        OnClick = MenuItem2Click
+      end
+      object MenuItem5: TMenuItem
+        Caption = 'Загрузить свой список'
+        OnClick = MenuItem5Click
+      end
+      object MenuItem3: TMenuItem
+        Caption = 'Добавить к текущему списку'
+        OnClick = MenuItem3Click
+      end
+      object MenuItem8: TMenuItem
+        Caption = 'Удалить все сервисы из списка'
+        OnClick = MenuItem8Click
+      end
+      object MenuItem4: TMenuItem
+        Caption = 'Сохранить список в файл'
+        OnClick = MenuItem4Click
+      end
+    end
+    object MenuItem9: TMenuItem
+      Caption = 'Помощь'
+      object MenuItem10: TMenuItem
+        Caption = 'О программе'
+        OnClick = MenuItem10Click
+      end
+    end
+  end
+  object OpenDialog1: TOpenDialog
+    DefaultExt = '.txt'
+    Filter = 'Текстовые файлы|*.txt|XML-файлы|*.xml'
+    left = 560
+    top = 344
+  end
+  object SaveDialog1: TSaveDialog
+    DefaultExt = '.xml'
+    FileName = 'services'
+    Filter = 'Текстовый файл|*.txt|XML-файл|*.xml'
+    FilterIndex = 2
+    Options = [ofNoNetworkButton, ofEnableSizing, ofViewDetail]
+    left = 520
+    top = 416
+  end
+end

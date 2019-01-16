@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <Compiler Value="/usr/bin/fpc" Date="1244095286"/>
+  <Params Value=" -MObjFPC -Scgi -CX -O1 -Xs -XX -WG -vewnhi -l -Fi/home/vlad/Lazarus-Work/pings/ -Fu/home/vlad/Lazarus_Components/synapse/source/lib/ -Fu/home/vlad/Lazarus-Work/pings/C:/lazarus/libs/source/lib/ -Fu/usr/lib/lazarus/0.9.28.2/lcl/units/i386-linux/ -Fu/usr/lib/lazarus/0.9.28.2/lcl/units/i386-linux/gtk2/ -Fu/usr/lib/lazarus/0.9.28.2/packager/units/i386-linux/ -Fu/home/vlad/Lazarus-Work/pings/ -Fu. -FE/home/vlad/Lazarus-Work/pings/ -opings -dLCL -dLCLgtk2 pings.lpr"/>
+</CONFIG>

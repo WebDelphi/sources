@@ -1,0 +1,141 @@
+object fClean: TfClean
+  Left = 316
+  Height = 236
+  Top = 261
+  Width = 337
+  ActiveControl = SpinEdit1
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'Чистка списка сервисов'
+  ClientHeight = 236
+  ClientWidth = 337
+  OnClose = FormClose
+  LCLVersion = '0.9.28.2'
+  object GroupBox1: TGroupBox
+    Left = 0
+    Height = 88
+    Top = 0
+    Width = 337
+    Align = alTop
+    Caption = 'Фильтр'
+    ClientHeight = 69
+    ClientWidth = 333
+    TabOrder = 0
+    object CheckBox1: TCheckBox
+      Left = 6
+      Height = 22
+      Top = 7
+      Width = 171
+      Caption = 'Если ошибок больше'
+      OnChange = CheckBox1Change
+      TabOrder = 0
+    end
+    object CheckBox2: TCheckBox
+      Left = 6
+      Height = 22
+      Top = 36
+      Width = 256
+      Caption = 'Если код последней ошибки был'
+      OnChange = CheckBox2Change
+      TabOrder = 1
+    end
+    object SpinEdit1: TSpinEdit
+      Left = 270
+      Height = 27
+      Top = -1
+      Width = 50
+      Enabled = False
+      TabOrder = 2
+      Value = 1
+    end
+    object Edit1: TEdit
+      Left = 270
+      Height = 27
+      Top = 31
+      Width = 50
+      Enabled = False
+      TabOrder = 3
+      Text = '404'
+    end
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 40
+    Top = 88
+    Width = 337
+    Align = alTop
+    ClientHeight = 40
+    ClientWidth = 337
+    TabOrder = 1
+    object BitBtn1: TBitBtn
+      Left = 112
+      Height = 30
+      Top = 5
+      Width = 96
+      Caption = 'Чистить'
+      Default = True
+      Kind = bkOK
+      OnClick = BitBtn1Click
+      TabOrder = 0
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 0
+    Height = 108
+    Top = 128
+    Width = 337
+    Align = alClient
+    Caption = 'Выполнение операции'
+    ClientHeight = 104
+    ClientWidth = 333
+    TabOrder = 2
+    object Label1: TLabel
+      Left = 22
+      Height = 18
+      Top = 7
+      Width = 171
+      Caption = 'Всего в списке сервисов'
+      ParentColor = False
+    end
+    object Label2: TLabel
+      Left = 206
+      Height = 18
+      Top = 7
+      Width = 44
+      Caption = 'Label2'
+      ParentColor = False
+    end
+    object Label3: TLabel
+      Left = 46
+      Height = 18
+      Top = 35
+      Width = 63
+      Caption = 'Удалены'
+      ParentColor = False
+    end
+    object Label4: TLabel
+      Left = 206
+      Height = 18
+      Top = 35
+      Width = 44
+      Caption = 'Label4'
+      ParentColor = False
+    end
+    object Label5: TLabel
+      Left = 46
+      Height = 18
+      Top = 63
+      Width = 114
+      Caption = 'Прошли фильтр'
+      ParentColor = False
+    end
+    object Label6: TLabel
+      Left = 206
+      Height = 18
+      Top = 63
+      Width = 44
+      Caption = 'Label6'
+      ParentColor = False
+    end
+  end
+end
