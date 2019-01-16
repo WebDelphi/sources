@@ -1,0 +1,79 @@
+object Form4: TForm4
+  Left = 0
+  Top = 0
+  Caption = 'Form4'
+  ClientHeight = 480
+  ClientWidth = 512
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object Memo1: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Align = Client
+    Size.Width = 512.000000000000000000
+    Size.Height = 480.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    Viewport.Width = 508.000000000000000000
+    Viewport.Height = 476.000000000000000000
+  end
+  object Panel1: TPanel
+    Position.X = 60.000000000000000000
+    Position.Y = 12.000000000000000000
+    TabOrder = 7
+    object Button1: TButton
+      Position.X = 28.000000000000000000
+      Position.Y = 42.000000000000000000
+      TabOrder = 1
+      Text = 'Button1'
+      OnClick = Button1Click
+    end
+  end
+  object AndroidProfile: TTetheringAppProfile
+    Manager = AndroidManager
+    Text = 'AndroidProfile'
+    Group = 'AppTesting'
+    Actions = <
+      item
+        Name = 'aaKeyboard'
+        IsPublic = True
+        Action = Action1
+        NotifyUpdates = True
+      end>
+    Resources = <
+      item
+        Name = 'rsString'
+        IsPublic = True
+      end
+      item
+        Name = 'rsInteger'
+        IsPublic = True
+      end
+      item
+        Name = 'rsStream'
+        IsPublic = True
+      end>
+    Left = 196
+    Top = 194
+  end
+  object AndroidManager: TTetheringManager
+    OnRequestManagerPassword = AndroidManagerRequestManagerPassword
+    OnEndAutoConnect = AndroidManagerEndAutoConnect
+    Password = '123456'
+    Text = 'AndroidManager'
+    AllowedAdapters = 'Network'
+    Left = 198
+    Top = 100
+  end
+  object AndroidActionList: TActionList
+    Left = 194
+    Top = 296
+    object Action1: TAction
+      Text = 'Action1'
+      OnExecute = Action1Execute
+    end
+  end
+end

@@ -1,0 +1,66 @@
+inherited Form4_LgXhdpiPh: TForm4_LgXhdpiPh
+  ClientHeight = 695
+  ClientWidth = 450
+  OnDestroy = FormDestroy
+  DesignerMasterStyle = 0
+  inherited Memo1: TMemo
+    Size.Width = 450.000000000000000000
+    Size.Height = 646.000000000000000000
+    Viewport.Width = 442.000000000000000000
+    Viewport.Height = 638.000000000000000000
+  end
+  inherited Panel1: TPanel
+    Align = Top
+    Size.Width = 450.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    inherited Button1: TButton
+      Align = Left
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'actiontoolbutton'
+      OnClick = Button1Click
+    end
+  end
+  inherited AndroidProfile: TTetheringAppProfile
+    Text = 'AndroidProfileDesc'
+    OnAfterReceiveStream = AndroidProfileAfterReceiveStream
+    Actions = <
+      item
+        Name = 'raMemo'
+        IsPublic = True
+        Action = Action1
+        NotifyUpdates = False
+      end>
+    Resources = <
+      item
+        Name = 'rsString'
+        IsPublic = True
+      end
+      item
+        Name = 'rsInteger'
+        IsPublic = True
+      end
+      item
+        Name = 'rsStream'
+        IsPublic = True
+        ResType = Stream
+      end>
+    OnResourceReceived = AndroidProfileResourceReceived
+    Left = 130
+    Top = 162
+  end
+  inherited AndroidManager: TTetheringManager
+    Text = 'AndroidManagerDesc'
+    Left = 132
+    Top = 72
+  end
+  inherited AndroidActionList: TActionList
+    Left = 128
+    Top = 252
+    inherited Action1: TAction
+      OnExecute = nil
+    end
+  end
+end
