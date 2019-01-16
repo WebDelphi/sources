@@ -1,0 +1,117 @@
+object Form6: TForm6
+  Left = 0
+  Top = 0
+  Caption = 'Form6'
+  ClientHeight = 480
+  ClientWidth = 410
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  DesignerMasterStyle = 0
+  object Label1: TLabel
+    AutoSize = True
+    Position.X = 8.000000000000000000
+    Position.Y = 12.000000000000000000
+    Size.Width = 25.000000000000000000
+    Size.Height = 16.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.WordWrap = False
+    Text = 'URL'
+  end
+  object Edit1: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 1
+    Text = 'http://webdelphi.ru/11.mp3'
+    Position.X = 44.000000000000000000
+    Position.Y = 10.000000000000000000
+    Size.Width = 353.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Button1: TButton
+    Position.X = 10.000000000000000000
+    Position.Y = 38.000000000000000000
+    TabOrder = 2
+    Text = 'Play'
+    OnClick = Button1Click
+  end
+  object Button3: TButton
+    Position.X = 100.000000000000000000
+    Position.Y = 38.000000000000000000
+    TabOrder = 3
+    Text = 'Stop'
+    OnClick = Button3Click
+  end
+  object lbAlbum: TLabel
+    AutoSize = True
+    Position.X = 10.000000000000000000
+    Position.Y = 82.000000000000000000
+    Size.Width = 48.000000000000000000
+    Size.Height = 16.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.WordWrap = False
+    Text = 'lbAlbum'
+  end
+  object lbArtist: TLabel
+    AutoSize = True
+    Position.X = 10.000000000000000000
+    Position.Y = 105.000000000000000000
+    Size.Width = 42.000000000000000000
+    Size.Height = 16.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.WordWrap = False
+    Text = 'lbArtist'
+  end
+  object lbTitle: TLabel
+    AutoSize = True
+    Position.X = 10.000000000000000000
+    Position.Y = 128.000000000000000000
+    Size.Width = 36.000000000000000000
+    Size.Height = 16.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.WordWrap = False
+    Text = 'lbTitle'
+  end
+  object lbGenre: TLabel
+    AutoSize = True
+    Position.X = 10.000000000000000000
+    Position.Y = 151.000000000000000000
+    Size.Width = 46.000000000000000000
+    Size.Height = 16.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.WordWrap = False
+    Text = 'lbGenre'
+  end
+  object lbCDTrackNo: TLabel
+    AutoSize = True
+    Position.X = 10.000000000000000000
+    Position.Y = 174.000000000000000000
+    Size.Width = 74.000000000000000000
+    Size.Height = 16.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.WordWrap = False
+    Text = 'lbCDTrackNo'
+  end
+  object lbYear: TLabel
+    AutoSize = True
+    Position.X = 10.000000000000000000
+    Position.Y = 197.000000000000000000
+    Size.Width = 38.000000000000000000
+    Size.Height = 16.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.WordWrap = False
+    Text = 'lbYear'
+  end
+  object lbBitrate: TLabel
+    AutoSize = True
+    Position.X = 10.000000000000000000
+    Position.Y = 220.000000000000000000
+    Size.Width = 48.000000000000000000
+    Size.Height = 16.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.WordWrap = False
+    Text = 'lbBitrate'
+  end
+end

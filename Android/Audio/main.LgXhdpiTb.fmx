@@ -1,0 +1,54 @@
+inherited Form6_LgXhdpiTb: TForm6_LgXhdpiTb
+  ClientHeight = 829
+  ClientWidth = 480
+  DesignerMasterStyle = 0
+  inherited Label1: TLabel
+    Size.Width = 40.000000000000000000
+    Size.Height = 22.000000000000000000
+  end
+  inherited Edit1: TEdit
+    Size.Height = 32.000000000000000000
+  end
+  inherited Button1: TButton
+    Position.Y = 48.000000000000000000
+  end
+  inherited Button3: TButton
+    Position.X = 92.000000000000000000
+    Position.Y = 48.000000000000000000
+  end
+  inherited lbAlbum: TLabel
+    Position.Y = 108.000000000000000000
+    Size.Width = 72.000000000000000000
+    Size.Height = 22.000000000000000000
+  end
+  inherited lbArtist: TLabel
+    Position.Y = 135.000000000000000000
+    Size.Width = 65.000000000000000000
+    Size.Height = 22.000000000000000000
+  end
+  inherited lbTitle: TLabel
+    Position.Y = 162.000000000000000000
+    Size.Width = 56.000000000000000000
+    Size.Height = 22.000000000000000000
+  end
+  inherited lbGenre: TLabel
+    Position.Y = 190.000000000000000000
+    Size.Width = 68.000000000000000000
+    Size.Height = 22.000000000000000000
+  end
+  inherited lbCDTrackNo: TLabel
+    Position.Y = 217.000000000000000000
+    Size.Width = 112.000000000000000000
+    Size.Height = 22.000000000000000000
+  end
+  inherited lbYear: TLabel
+    Position.Y = 244.000000000000000000
+    Size.Width = 57.000000000000000000
+    Size.Height = 22.000000000000000000
+  end
+  inherited lbBitrate: TLabel
+    Position.Y = 272.000000000000000000
+    Size.Width = 74.000000000000000000
+    Size.Height = 22.000000000000000000
+  end
+end
