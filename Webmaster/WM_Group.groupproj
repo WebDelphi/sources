@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{BD2CCBAE-6F6A-41CF-9243-D626B9A3650C}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="WM.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="L:\Delphi Samples\RadStudio_Rio\Object Pascal\VCL\SplitView\SplitView.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="WM">
+        <MSBuild Projects="WM.dproj"/>
+    </Target>
+    <Target Name="WM:Clean">
+        <MSBuild Projects="WM.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="WM:Make">
+        <MSBuild Projects="WM.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SplitView">
+        <MSBuild Projects="L:\Delphi Samples\RadStudio_Rio\Object Pascal\VCL\SplitView\SplitView.dproj"/>
+    </Target>
+    <Target Name="SplitView:Clean">
+        <MSBuild Projects="L:\Delphi Samples\RadStudio_Rio\Object Pascal\VCL\SplitView\SplitView.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SplitView:Make">
+        <MSBuild Projects="L:\Delphi Samples\RadStudio_Rio\Object Pascal\VCL\SplitView\SplitView.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="WM;SplitView"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="WM:Clean;SplitView:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="WM:Make;SplitView:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
