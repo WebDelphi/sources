@@ -1,0 +1,31 @@
+inherited Form7_LgXhdpiPh: TForm7_LgXhdpiPh
+  ClientHeight = 695
+  ClientWidth = 450
+  DesignerMasterStyle = 3
+  inherited edStr1: TEdit
+    Text = 'edStr1'
+  end
+  inherited edStr2: TEdit
+    Text = 'edStr2'
+  end
+  inherited udLimit: TNumberBox
+    Value = 1000000.000000000000000000
+  end
+  inherited CornerButton1: TCornerButton
+    Position.X = 108.000000000000000000
+    Position.Y = 141.000000000000000000
+    Size.Width = 214.000000000000000000
+    Size.PlatformDefault = False
+    Text = #1050#1086#1085#1082#1072#1090#1077#1085#1080#1088#1091#1081' '#1101#1090#1086'!'
+    OnClick = CornerButton1Click
+  end
+  inherited Memo1: TMemo
+    Position.X = 9.000000000000000000
+    Position.Y = 189.000000000000000000
+    Size.Width = 436.000000000000000000
+    Size.Height = 493.000000000000000000
+    Size.PlatformDefault = False
+    Viewport.Width = 436.000000000000000000
+    Viewport.Height = 493.000000000000000000
+  end
+end
